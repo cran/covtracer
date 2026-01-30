@@ -91,6 +91,7 @@ edges_df
 vertices_df
 
 ## ----fig.asp = 1, fig.width = 8L, out.width = "100%", error = TRUE----------------------------------------------------
+try({
 g <- igraph::graph_from_data_frame(edges_df, vertices = vertices_df)
 
 par(mai = rep(0, 4), omi = rep(0, 4L))
@@ -115,4 +116,5 @@ legend(
   pch = 16,
   bty = "n"
 )
+})
 

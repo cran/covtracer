@@ -27,46 +27,31 @@ document.addEventListener('DOMContentLoaded', function(e) {
   }
 });
 </script>
-<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
-// v0.0.1
-// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
-
-document.addEventListener('DOMContentLoaded', function() {
-  const codeList = document.getElementsByClassName("sourceCode");
-  for (var i = 0; i < codeList.length; i++) {
-    var linkList = codeList[i].getElementsByTagName('a');
-    for (var j = 0; j < linkList.length; j++) {
-      if (linkList[j].innerHTML === "") {
-        linkList[j].setAttribute('aria-hidden', 'true');
-      }
-    }
-  }
-});
-</script>
 
 <style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
 
 
 
 <style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
@@ -75,58 +60,57 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-  {   }
+{ }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -356,143 +340,200 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">library</span>(covtracer)</span></code></pre></div>
-<p>There are two key relationships that we will explore. The first is a relationship of <code>srcref</code> objects, and the second is the relationship between namespace object definitions and their associated documentation.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(covtracer)</span></code></pre></div>
+<p>There are two key relationships that we will explore. The first is a
+relationship of <code>srcref</code> objects, and the second is the
+relationship between namespace object definitions and their associated
+documentation.</p>
 <div id="setup" class="section level1">
 <h1>Setup</h1>
-<p>Before we begin, we’ll set up a demo coverage object and package namespace that we can use to showcase these relationships:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="kw">library</span>(withr)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="kw">library</span>(covr)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>withr<span class="op">::</span><span class="kw">with_temp_libpaths</span>({</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a>  <span class="kw">options</span>(<span class="dt">keep.source =</span> <span class="ot">TRUE</span>, <span class="dt">keep.source.pkg =</span> <span class="ot">TRUE</span>, <span class="dt">covr.record_tests =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true"></a>  examplepkg_source_path &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;examplepkg&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;covtracer&quot;</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true"></a>  <span class="kw">install.packages</span>(</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a>    examplepkg_source_path,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a>    <span class="dt">type =</span> <span class="st">&quot;source&quot;</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true"></a>    <span class="dt">repos =</span> <span class="ot">NULL</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true"></a>    <span class="dt">INSTALL_opts =</span> <span class="kw">c</span>(<span class="st">&quot;--with-keep.source&quot;</span>, <span class="st">&quot;--install-tests&quot;</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true"></a>  )</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true"></a>  examplepkg_cov &lt;-<span class="st"> </span>covr<span class="op">::</span><span class="kw">package_coverage</span>(examplepkg_source_path)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true"></a>  examplepkg_ns &lt;-<span class="st"> </span><span class="kw">getNamespace</span>(<span class="st">&quot;examplepkg&quot;</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true"></a>})</span></code></pre></div>
+<p>Before we begin, we’ll set up a demo coverage object and package
+namespace that we can use to showcase these relationships:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(withr)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">library</span>(covr)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>withr<span class="sc">::</span><span class="fu">with_temp_libpaths</span>({</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="fu">options</span>(<span class="at">keep.source =</span> <span class="cn">TRUE</span>, <span class="at">keep.source.pkg =</span> <span class="cn">TRUE</span>, <span class="at">covr.record_tests =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  examplepkg_source_path <span class="ot">&lt;-</span> <span class="fu">system.file</span>(<span class="st">&quot;examplepkg&quot;</span>, <span class="at">package =</span> <span class="st">&quot;covtracer&quot;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  <span class="fu">install.packages</span>(</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>    examplepkg_source_path,</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&quot;source&quot;</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>    <span class="at">repos =</span> <span class="cn">NULL</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    <span class="at">INSTALL_opts =</span> <span class="fu">c</span>(<span class="st">&quot;--with-keep.source&quot;</span>, <span class="st">&quot;--install-tests&quot;</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>  )</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>  examplepkg_cov <span class="ot">&lt;-</span> covr<span class="sc">::</span><span class="fu">package_coverage</span>(examplepkg_source_path)</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>  examplepkg_ns <span class="ot">&lt;-</span> <span class="fu">getNamespace</span>(<span class="st">&quot;examplepkg&quot;</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>})</span></code></pre></div>
 </div>
 <div id="relational-srcref-data" class="section level1">
 <h1>Relational <code>srcref</code> data</h1>
-<p>First and foremost, we want to be able to associate <code>srcref</code> objects. These relationships are define the location of code. A <code>srecref</code> describes a region of code where the expression was pulled from, and we can compare these to determine whether a <code>srcref</code> is within, containing or independent of another.</p>
-<p>This vignette will gloss over each of these tables. For more details see the <em>Working with <code>srcref</code>s</em> vignette.</p>
+<p>First and foremost, we want to be able to associate
+<code>srcref</code> objects. These relationships are define the location
+of code. A <code>srecref</code> describes a region of code where the
+expression was pulled from, and we can compare these to determine
+whether a <code>srcref</code> is within, containing or independent of
+another.</p>
+<p>This vignette will gloss over each of these tables. For more details
+see the <em>Working with <code>srcref</code>s</em> vignette.</p>
 <div id="linking-covr-traces-to-package-object-srcrefs" class="section level2">
-<h2>Linking <code>covr</code> traces to package object <code>srcref</code>s</h2>
-<p>It’s important to note that coverage traces always sit within a package namespace object. Where a namespace object might have a <code>srcref</code> to the full code for a function, coverage traces trace individual expressions within that function.</p>
-<p>To associate <code>srcref</code>s by this relation, we provide a special joining function to combine <code>data.frames</code> by <code>srcref</code> columns.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>traces_df &lt;-<span class="st"> </span><span class="kw">trace_srcrefs_df</span>(examplepkg_cov)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a>pkg_ns_df &lt;-<span class="st"> </span><span class="kw">pkg_srcrefs_df</span>(examplepkg_ns)</span></code></pre></div>
-<p>Just looking at these two <code>data.frames</code>, we can use the first trace and package object to illustrate the relationship:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="kw">cat</span>(<span class="st">&quot;pkg  : &quot;</span>, <span class="kw">format</span>(pkg_ns_df<span class="op">$</span>srcref[<span class="st">&quot;s3_example_func.list&quot;</span>]), <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="co">#&gt; pkg  :  s3_example.R:20:25:22:1</span></span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="kw">cat</span>(<span class="st">&quot;trace: &quot;</span>, <span class="kw">format</span>(traces_df<span class="op">$</span>srcref[1L]), <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="co">#&gt; trace:  complex_call_stack.R:4:3:4:20</span></span></code></pre></div>
-<p>Although still a little arcane, you can see that the package object code contains the coverage trace. The package code spans lines 19-21, whereas the coverage trace lies in line 20. With this information, we can couple each package object with the coverage traces contained within each.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="kw">head</span>(<span class="kw">join_on_containing_srcrefs</span>(traces_df, pkg_ns_df))</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="co">#&gt;                                       name.x                        srcref.x                  name.y</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="co">#&gt; 1     complex_call_stack.R:4:3:4:20:3:20:6:6   complex_call_stack.R:4:3:4:20      complex_call_stack</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="co">#&gt; 2       s4_example.R:44:3:44:15:3:15:311:311         s4_example.R:44:3:44:15 names,S4Example2-method</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="co">#&gt; 3           hypotenuse.R:8:3:8:25:3:25:35:35           hypotenuse.R:8:3:8:25              hypotenuse</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a><span class="co">#&gt; 4         s3_example.R:21:3:21:8:3:8:265:265          s3_example.R:21:3:21:8    s3_example_func.list</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="co">#&gt; 5             r6_example.R:4:3:8:3:3:3:41:45            r6_example.R:4:3:8:3                   adder</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a><span class="co">#&gt; 6 complex_call_stack.R:10:3:10:27:3:27:12:12 complex_call_stack.R:10:3:10:27         nested_function</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a><span class="co">#&gt;                         srcref.y namespace.y</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a><span class="co">#&gt; 1  complex_call_stack.R:3:23:5:1  examplepkg</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a><span class="co">#&gt; 2        s4_example.R:43:45:45:1  examplepkg</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a><span class="co">#&gt; 3          hypotenuse.R:7:15:9:1  examplepkg</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a><span class="co">#&gt; 4        s3_example.R:20:25:22:1  examplepkg</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a><span class="co">#&gt; 5          r6_example.R:3:10:9:1  examplepkg</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a><span class="co">#&gt; 6 complex_call_stack.R:9:20:11:1  examplepkg</span></span></code></pre></div>
-<p>As expected, we can see that this test trace (now with the <code>&quot;.x&quot;</code> suffix) is mapped to the expected corresponding package namespace object.</p>
+<h2>Linking <code>covr</code> traces to package object
+<code>srcref</code>s</h2>
+<p>It’s important to note that coverage traces always sit within a
+package namespace object. Where a namespace object might have a
+<code>srcref</code> to the full code for a function, coverage traces
+trace individual expressions within that function.</p>
+<p>To associate <code>srcref</code>s by this relation, we provide a
+special joining function to combine <code>data.frames</code> by
+<code>srcref</code> columns.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>traces_df <span class="ot">&lt;-</span> <span class="fu">trace_srcrefs_df</span>(examplepkg_cov)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>pkg_ns_df <span class="ot">&lt;-</span> <span class="fu">pkg_srcrefs_df</span>(examplepkg_ns)</span></code></pre></div>
+<p>Just looking at these two <code>data.frames</code>, we can use the
+first trace and package object to illustrate the relationship:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;pkg  : &quot;</span>, <span class="fu">format</span>(pkg_ns_df<span class="sc">$</span>srcref[<span class="st">&quot;s3_example_func.list&quot;</span>]), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt; pkg  :  s3_example.R:20:25:22:1</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;trace: &quot;</span>, <span class="fu">format</span>(traces_df<span class="sc">$</span>srcref[<span class="dv">1</span><span class="dt">L</span>]), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; trace:  r6_example.R:63:7:63:24</span></span></code></pre></div>
+<p>Although still a little arcane, you can see that the package object
+code contains the coverage trace. The package code spans lines 19-21,
+whereas the coverage trace lies in line 20. With this information, we
+can couple each package object with the coverage traces contained within
+each.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">join_on_containing_srcrefs</span>(traces_df, pkg_ns_df))</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt;                                 name.x                srcref.x                  name.y                 srcref.y</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt; 1 r6_example.R:63:7:63:24:7:24:100:100 r6_example.R:63:7:63:24                  Person  r6_example.R:60:18:64:5</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt; 2 r6_example.R:74:7:74:23:7:23:111:111 r6_example.R:74:7:74:23                  Person  r6_example.R:72:13:77:5</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt; 3       r6_example.R:4:3:8:3:3:3:41:45    r6_example.R:4:3:8:3                   adder    r6_example.R:3:10:9:1</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt; 4   r6_example.R:97:9:97:22:9:22:97:97 r6_example.R:97:9:97:22                   Rando r6_example.R:95:12:102:3</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt; 5 s3_example.R:16:3:16:11:3:11:259:259 s3_example.R:16:3:16:11 s3_example_func.default  s3_example.R:15:28:17:1</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt; 6     hypotenuse.R:8:3:8:25:3:25:35:35   hypotenuse.R:8:3:8:25              hypotenuse    hypotenuse.R:7:15:9:1</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt;   namespace.y</span></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt; 1  examplepkg</span></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt; 2  examplepkg</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt; 3  examplepkg</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt; 4  examplepkg</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt; 5  examplepkg</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt; 6  examplepkg</span></span></code></pre></div>
+<p>As expected, we can see that this test trace (now with the
+<code>&quot;.x&quot;</code> suffix) is mapped to the expected corresponding
+package namespace object.</p>
 </div>
 <div id="linking-unit-tests-to-evaluated-covr-traces" class="section level2">
 <h2>Linking unit tests to evaluated <code>covr</code> traces</h2>
-<p>Although this relationship doesn’t require any fancy <code>srcref</code> joining, we can associate tests and traces by a simple mapping of indices. FOr this, the <code>test_trace_mapping()</code> function is provided which will reshape a <code>covr</code> object (produced using <code>options(covr.record_tests = TRUE)</code>) to create a unified table across all <code>covr</code> traces:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="kw">head</span>(<span class="kw">test_trace_mapping</span>(examplepkg_cov))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="co">#&gt;      test call depth i trace</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a><span class="co">#&gt; [1,]    1    1     1 1    24</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true"></a><span class="co">#&gt; [2,]    2    1    37 1     1</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true"></a><span class="co">#&gt; [3,]    2    3    42 1     1</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true"></a><span class="co">#&gt; [4,]    2    4    42 1     1</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true"></a><span class="co">#&gt; [5,]    2    5    42 1     1</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true"></a><span class="co">#&gt; [6,]    2    6    42 1     1</span></span></code></pre></div>
-<p>The <code>test</code> and <code>trace</code> columns contain the row indices in the respective <code>test_srcrefs_df()</code> and <code>trace_srcrefs_df()</code> <code>data.frame</code>s, allowing for this data to be joined. However, since it is easy for a testing suite to cause the evaluation of an enormous number of traces, this matrix can become extremely long. It is recommended to do some aggregation or subsetting of this matrix before trying to use it to join more data-rich data.</p>
-<p>You can also see that the evaluation order is stored (<code>i</code>), as well as the stack depth when it was evaluated (<code>depth</code>). With this added info, you might consider first filtering for only the first trace evaluated by each test, or to count all the times that a line of code was evaluated by each test by aggregating rows.</p>
+<p>Although this relationship doesn’t require any fancy
+<code>srcref</code> joining, we can associate tests and traces by a
+simple mapping of indices. FOr this, the
+<code>test_trace_mapping()</code> function is provided which will
+reshape a <code>covr</code> object (produced using
+<code>options(covr.record_tests = TRUE)</code>) to create a unified
+table across all <code>covr</code> traces:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">test_trace_mapping</span>(examplepkg_cov))</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co">#&gt;      test call depth i trace</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#&gt; [1,]    1    1     1 1     9</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#&gt; [2,]    2    1    37 1    18</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#&gt; [3,]    2    1    38 2    14</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt; [4,]    2    1    39 3    24</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt; [5,]    2    1    40 4    21</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt; [6,]    2    1    40 5    27</span></span></code></pre></div>
+<p>The <code>test</code> and <code>trace</code> columns contain the row
+indices in the respective <code>test_srcrefs_df()</code> and
+<code>trace_srcrefs_df()</code> <code>data.frame</code>s, allowing for
+this data to be joined. However, since it is easy for a testing suite to
+cause the evaluation of an enormous number of traces, this matrix can
+become extremely long. It is recommended to do some aggregation or
+subsetting of this matrix before trying to use it to join more data-rich
+data.</p>
+<p>You can also see that the evaluation order is stored
+(<code>i</code>), as well as the stack depth when it was evaluated
+(<code>depth</code>). With this added info, you might consider first
+filtering for only the first trace evaluated by each test, or to count
+all the times that a line of code was evaluated by each test by
+aggregating rows.</p>
 </div>
 </div>
 <div id="relational-documentation-data" class="section level1">
 <h1>Relational documentation data</h1>
-<p>On the other side of the process, we also need to associate package objects with documentation. In many cases, this is trivial, and the name of the exported object can be used directly to find documentation as you have come to expect using <code>?&lt;object&gt;</code>. This holds for simple functions. However, some objects are aliased to different documentation files or are built at package build time into internal representations, as is with <code>S4</code> classes, and <code>R6</code> classes.</p>
-<p>To handle these cases, we can use the <code>Rd_df()</code> function to associate any available source code with a documentation file.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co"># filter for interesting columns for display</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>cols &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;file&quot;</span>, <span class="st">&quot;alias&quot;</span>, <span class="st">&quot;doctype&quot;</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a><span class="kw">Rd_df</span>(examplepkg_source_path)[, cols]</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="co">#&gt;                          file                   alias doctype</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a><span class="co">#&gt; 1              Accumulator.Rd             Accumulator    &lt;NA&gt;</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a><span class="co">#&gt; 2                   Person.Rd                  Person    &lt;NA&gt;</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true"></a><span class="co">#&gt; 3              PersonPrime.Rd             PersonPrime    data</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true"></a><span class="co">#&gt; 4                    Rando.Rd                   Rando    &lt;NA&gt;</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true"></a><span class="co">#&gt; 5          S4Example-class.Rd         S4Example-class   class</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true"></a><span class="co">#&gt; 6          S4Example-class.Rd               S4Example   class</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true"></a><span class="co">#&gt; 7         S4Example2-class.Rd        S4Example2-class   class</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true"></a><span class="co">#&gt; 8         S4Example2-class.Rd              S4Example2   class</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true"></a><span class="co">#&gt; 9                    adder.Rd                   adder    &lt;NA&gt;</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true"></a><span class="co">#&gt; 10      complex_call_stack.Rd      complex_call_stack    &lt;NA&gt;</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true"></a><span class="co">#&gt; 11  deeper_nested_function.Rd  deeper_nested_function    &lt;NA&gt;</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true"></a><span class="co">#&gt; 12              hypotenuse.Rd              hypotenuse    &lt;NA&gt;</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true"></a><span class="co">#&gt; 13               increment.Rd               increment    &lt;NA&gt;</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true"></a><span class="co">#&gt; 14  names-S4Example-method.Rd  names,S4Example-method    &lt;NA&gt;</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true"></a><span class="co">#&gt; 15 names-S4Example2-method.Rd names,S4Example2-method    &lt;NA&gt;</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true"></a><span class="co">#&gt; 16         nested_function.Rd         nested_function    &lt;NA&gt;</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true"></a><span class="co">#&gt; 17         rd_data_sampler.Rd         rd_data_sampler    data</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true"></a><span class="co">#&gt; 18              rd_sampler.Rd              rd_sampler    &lt;NA&gt;</span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true"></a><span class="co">#&gt; 19      recursive_function.Rd      recursive_function    &lt;NA&gt;</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true"></a><span class="co">#&gt; 20        reexport_example.Rd        reexport_example    &lt;NA&gt;</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true"></a><span class="co">#&gt; 21               reexports.Rd               reexports  import</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true"></a><span class="co">#&gt; 22               reexports.Rd                    help  import</span></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true"></a><span class="co">#&gt; 23         s3_example_func.Rd         s3_example_func    &lt;NA&gt;</span></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true"></a><span class="co">#&gt; 24         s3_example_func.Rd s3_example_func.default    &lt;NA&gt;</span></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true"></a><span class="co">#&gt; 25         s3_example_func.Rd    s3_example_func.list    &lt;NA&gt;</span></span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true"></a><span class="co">#&gt; 26   show-S4Example-method.Rd   show,S4Example-method    &lt;NA&gt;</span></span></code></pre></div>
-<p>These aliases are also used when we use <code>pkg_srcrefs_df()</code> and can be used to associate <code>srcrefs</code> with <code>.Rd</code> files.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="kw">pkg_srcrefs_df</span>(examplepkg_ns)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="co">#&gt;                       name                          srcref  namespace</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="co">#&gt; 1          nested_function  complex_call_stack.R:9:20:11:1 examplepkg</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a><span class="co">#&gt; 2                    adder           r6_example.R:3:10:9:1 examplepkg</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a><span class="co">#&gt; 3       recursive_function complex_call_stack.R:21:23:24:1 examplepkg</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a><span class="co">#&gt; 5              Accumulator         r6_example.R:29:16:32:3 examplepkg</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a><span class="co">#&gt; 8     s3_example_func.list         s3_example.R:20:25:22:1 examplepkg</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a><span class="co">#&gt; 9          s3_example_func         s3_example.R:10:20:12:1 examplepkg</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a><span class="co">#&gt; 11                  Person         r6_example.R:60:18:64:5 examplepkg</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true"></a><span class="co">#&gt; 12                  Person         r6_example.R:72:13:77:5 examplepkg</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true"></a><span class="co">#&gt; 14               increment         s4_example.R:58:35:60:1 examplepkg</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true"></a><span class="co">#&gt; 15              rd_sampler         rd_sampler.R:56:15:58:1 examplepkg</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true"></a><span class="co">#&gt; 16  deeper_nested_function complex_call_stack.R:15:27:17:1 examplepkg</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true"></a><span class="co">#&gt; 17              hypotenuse           hypotenuse.R:7:15:9:1 examplepkg</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true"></a><span class="co">#&gt; 20                   Rando        r6_example.R:95:12:102:3 examplepkg</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true"></a><span class="co">#&gt; 21               increment         s4_example.R:53:25:55:1 examplepkg</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true"></a><span class="co">#&gt; 22 s3_example_func.default         s3_example.R:15:28:17:1 examplepkg</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true"></a><span class="co">#&gt; 23  names,S4Example-method         s4_example.R:17:44:19:1 examplepkg</span></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true"></a><span class="co">#&gt; 24 names,S4Example2-method         s4_example.R:43:45:45:1 examplepkg</span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true"></a><span class="co">#&gt; 25   show,S4Example-method         s4_example.R:25:43:27:1 examplepkg</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true"></a><span class="co">#&gt; 26      complex_call_stack   complex_call_stack.R:3:23:5:1 examplepkg</span></span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true"></a><span class="co">#&gt; 27             PersonPrime                            &lt;NA&gt;       &lt;NA&gt;</span></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true"></a><span class="co">#&gt; 28                    help                            &lt;NA&gt;      utils</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true"></a><span class="co">#&gt; 29        reexport_example                            &lt;NA&gt;      utils</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true"></a><span class="co">#&gt; 30              S4Example2                            &lt;NA&gt; examplepkg</span></span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true"></a><span class="co">#&gt; 31               S4Example                            &lt;NA&gt; examplepkg</span></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true"></a><span class="co">#&gt; 32                  person                            &lt;NA&gt;      utils</span></span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true"></a><span class="co">#&gt; 33         rd_data_sampler                            &lt;NA&gt;       &lt;NA&gt;</span></span></code></pre></div>
-<p>You’ll see that we don’t have any <code>srcref</code>s associated with the <code>&quot;data&quot;</code> and <code>&quot;class&quot;</code> doctype documentation because these objects do not themselves have source code, even if there is source code in that was used to create them at bulid time.</p>
+<p>On the other side of the process, we also need to associate package
+objects with documentation. In many cases, this is trivial, and the name
+of the exported object can be used directly to find documentation as you
+have come to expect using <code>?&lt;object&gt;</code>. This holds for
+simple functions. However, some objects are aliased to different
+documentation files or are built at package build time into internal
+representations, as is with <code>S4</code> classes, and <code>R6</code>
+classes.</p>
+<p>To handle these cases, we can use the <code>Rd_df()</code> function
+to associate any available source code with a documentation file.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># filter for interesting columns for display</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;file&quot;</span>, <span class="st">&quot;alias&quot;</span>, <span class="st">&quot;doctype&quot;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="fu">Rd_df</span>(examplepkg_source_path)[, cols]</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt;                          file                   alias doctype</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; 1              Accumulator.Rd             Accumulator    &lt;NA&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; 2                    adder.Rd                   adder    &lt;NA&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt; 3       complex_call_stack.Rd      complex_call_stack    &lt;NA&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt; 4   deeper_nested_function.Rd  deeper_nested_function    &lt;NA&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt; 5               hypotenuse.Rd              hypotenuse    &lt;NA&gt;</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt; 6                increment.Rd               increment    &lt;NA&gt;</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt; 7   names-S4Example-method.Rd  names,S4Example-method    &lt;NA&gt;</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt; 8  names-S4Example2-method.Rd names,S4Example2-method    &lt;NA&gt;</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt; 9          nested_function.Rd         nested_function    &lt;NA&gt;</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt; 10                  Person.Rd                  Person    &lt;NA&gt;</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt; 11             PersonPrime.Rd             PersonPrime    data</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt; 12                   Rando.Rd                   Rando    &lt;NA&gt;</span></span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co">#&gt; 13         rd_data_sampler.Rd         rd_data_sampler    data</span></span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="co">#&gt; 14              rd_sampler.Rd              rd_sampler    &lt;NA&gt;</span></span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="co">#&gt; 15      recursive_function.Rd      recursive_function    &lt;NA&gt;</span></span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="co">#&gt; 16        reexport_example.Rd        reexport_example    &lt;NA&gt;</span></span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a><span class="co">#&gt; 17               reexports.Rd               reexports  import</span></span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a><span class="co">#&gt; 18               reexports.Rd                    help  import</span></span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a><span class="co">#&gt; 19         s3_example_func.Rd         s3_example_func    &lt;NA&gt;</span></span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a><span class="co">#&gt; 20         s3_example_func.Rd s3_example_func.default    &lt;NA&gt;</span></span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a><span class="co">#&gt; 21         s3_example_func.Rd    s3_example_func.list    &lt;NA&gt;</span></span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a><span class="co">#&gt; 22         S4Example-class.Rd         S4Example-class   class</span></span>
+<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a><span class="co">#&gt; 23         S4Example-class.Rd               S4Example   class</span></span>
+<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a><span class="co">#&gt; 24        S4Example2-class.Rd        S4Example2-class   class</span></span>
+<span id="cb7-29"><a href="#cb7-29" tabindex="-1"></a><span class="co">#&gt; 25        S4Example2-class.Rd              S4Example2   class</span></span>
+<span id="cb7-30"><a href="#cb7-30" tabindex="-1"></a><span class="co">#&gt; 26   show-S4Example-method.Rd   show,S4Example-method    &lt;NA&gt;</span></span></code></pre></div>
+<p>These aliases are also used when we use <code>pkg_srcrefs_df()</code>
+and can be used to associate <code>srcrefs</code> with <code>.Rd</code>
+files.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">pkg_srcrefs_df</span>(examplepkg_ns)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt;                       name                          srcref  namespace</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt; 1          nested_function  complex_call_stack.R:9:20:11:1 examplepkg</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt; 2                    adder           r6_example.R:3:10:9:1 examplepkg</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co">#&gt; 3       recursive_function complex_call_stack.R:21:23:24:1 examplepkg</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="co">#&gt; 4              Accumulator         r6_example.R:29:16:32:3 examplepkg</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="co">#&gt; 6     s3_example_func.list         s3_example.R:20:25:22:1 examplepkg</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; 7          s3_example_func         s3_example.R:10:20:12:1 examplepkg</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="co">#&gt; 8                   Person         r6_example.R:60:18:64:5 examplepkg</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="co">#&gt; 9                   Person         r6_example.R:72:13:77:5 examplepkg</span></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="co">#&gt; 10               increment         s4_example.R:58:35:60:1 examplepkg</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co">#&gt; 11              rd_sampler         rd_sampler.R:55:15:57:1 examplepkg</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="co">#&gt; 12  deeper_nested_function complex_call_stack.R:15:27:17:1 examplepkg</span></span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="co">#&gt; 13              hypotenuse           hypotenuse.R:7:15:9:1 examplepkg</span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="co">#&gt; 14                   Rando        r6_example.R:95:12:102:3 examplepkg</span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co">#&gt; 15               increment         s4_example.R:53:25:55:1 examplepkg</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="co">#&gt; 16 s3_example_func.default         s3_example.R:15:28:17:1 examplepkg</span></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="co">#&gt; 17  names,S4Example-method         s4_example.R:17:44:19:1 examplepkg</span></span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="co">#&gt; 18 names,S4Example2-method         s4_example.R:43:45:45:1 examplepkg</span></span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="co">#&gt; 19   show,S4Example-method         s4_example.R:25:43:27:1 examplepkg</span></span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="co">#&gt; 20      complex_call_stack   complex_call_stack.R:3:23:5:1 examplepkg</span></span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="co">#&gt; 21             PersonPrime                            &lt;NA&gt;       &lt;NA&gt;</span></span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a><span class="co">#&gt; 22                    help                            &lt;NA&gt;      utils</span></span>
+<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a><span class="co">#&gt; 23        reexport_example                            &lt;NA&gt;      utils</span></span>
+<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a><span class="co">#&gt; 24              S4Example2                            &lt;NA&gt; examplepkg</span></span>
+<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a><span class="co">#&gt; 25               S4Example                            &lt;NA&gt; examplepkg</span></span>
+<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a><span class="co">#&gt; 26                  person                            &lt;NA&gt;      utils</span></span>
+<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a><span class="co">#&gt; 27         rd_data_sampler                            &lt;NA&gt;       &lt;NA&gt;</span></span></code></pre></div>
+<p>You’ll see that we don’t have any <code>srcref</code>s associated
+with the <code>&quot;data&quot;</code> and <code>&quot;class&quot;</code> doctype
+documentation because these objects do not themselves have source code,
+even if there is source code in that was used to create them at bulid
+time.</p>
 </div>
 <div id="summary" class="section level1">
 <h1>Summary</h1>
-<p>With these relationships, we can build some really deep understandings of exactly what code a test evaluates and tie that test together with the documented behaviors.</p>
+<p>With these relationships, we can build some really deep
+understandings of exactly what code a test evaluates and tie that test
+together with the documented behaviors.</p>
 </div>
 
 

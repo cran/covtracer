@@ -1,18 +1,18 @@
 Package: covtracer
 Title: Contextualizing Tests
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     c(
       person(
         "Doug", "Kelkhoff", , 
         "doug.kelkhoff@gmail.com", 
-        role = c("cre", "aut"),
+        role = c("aut"),
         comment = c(ORCID = "0009-0003-7845-4061")
       ),
       person(
         given = "Szymon",
         family = "Maksymiuk",
-        role = c("aut"),
+        role = c("aut", "cre"),
         email = "sz.maksymiuk@gmail.com",
         comment = c(ORCID = "0000-0002-3120-1601")
       ),
@@ -44,11 +44,12 @@ Encoding: UTF-8
 RoxygenNote: 7.3.1
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2024-07-04 17:10:53 UTC; root
-Author: Doug Kelkhoff [cre, aut] (<https://orcid.org/0009-0003-7845-4061>),
-  Szymon Maksymiuk [aut] (<https://orcid.org/0000-0002-3120-1601>),
+Packaged: 2026-01-30 17:22:13 UTC; maksymis
+Author: Doug Kelkhoff [aut] (ORCID: <https://orcid.org/0009-0003-7845-4061>),
+  Szymon Maksymiuk [aut, cre] (ORCID:
+    <https://orcid.org/0000-0002-3120-1601>),
   Andrew McNeil [aut],
   F. Hoffmann-La Roche AG [cph, fnd]
-Maintainer: Doug Kelkhoff <doug.kelkhoff@gmail.com>
+Maintainer: Szymon Maksymiuk <sz.maksymiuk@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-07-08 05:00:07 UTC
+Date/Publication: 2026-01-30 18:40:12 UTC
