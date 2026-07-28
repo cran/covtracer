@@ -48,8 +48,9 @@ overflow: visible;
 }
 </style>
 <style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,7 +61,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -465,33 +466,33 @@ to associate any available source code with a documentation file.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># filter for interesting columns for display</span></span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;file&quot;</span>, <span class="st">&quot;alias&quot;</span>, <span class="st">&quot;doctype&quot;</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="fu">Rd_df</span>(examplepkg_source_path)[, cols]</span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt;                          file                   alias doctype</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; 1              Accumulator.Rd             Accumulator    &lt;NA&gt;</span></span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; 2                    adder.Rd                   adder    &lt;NA&gt;</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt; 3       complex_call_stack.Rd      complex_call_stack    &lt;NA&gt;</span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt; 4   deeper_nested_function.Rd  deeper_nested_function    &lt;NA&gt;</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt; 5               hypotenuse.Rd              hypotenuse    &lt;NA&gt;</span></span>
-<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt; 6                increment.Rd               increment    &lt;NA&gt;</span></span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt; 7   names-S4Example-method.Rd  names,S4Example-method    &lt;NA&gt;</span></span>
-<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt; 8  names-S4Example2-method.Rd names,S4Example2-method    &lt;NA&gt;</span></span>
-<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt; 9          nested_function.Rd         nested_function    &lt;NA&gt;</span></span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt; 10                  Person.Rd                  Person    &lt;NA&gt;</span></span>
-<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt; 11             PersonPrime.Rd             PersonPrime    data</span></span>
-<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt; 12                   Rando.Rd                   Rando    &lt;NA&gt;</span></span>
-<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co">#&gt; 13         rd_data_sampler.Rd         rd_data_sampler    data</span></span>
-<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="co">#&gt; 14              rd_sampler.Rd              rd_sampler    &lt;NA&gt;</span></span>
-<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="co">#&gt; 15      recursive_function.Rd      recursive_function    &lt;NA&gt;</span></span>
-<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="co">#&gt; 16        reexport_example.Rd        reexport_example    &lt;NA&gt;</span></span>
-<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a><span class="co">#&gt; 17               reexports.Rd               reexports  import</span></span>
-<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a><span class="co">#&gt; 18               reexports.Rd                    help  import</span></span>
-<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a><span class="co">#&gt; 19         s3_example_func.Rd         s3_example_func    &lt;NA&gt;</span></span>
-<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a><span class="co">#&gt; 20         s3_example_func.Rd s3_example_func.default    &lt;NA&gt;</span></span>
-<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a><span class="co">#&gt; 21         s3_example_func.Rd    s3_example_func.list    &lt;NA&gt;</span></span>
-<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a><span class="co">#&gt; 22         S4Example-class.Rd         S4Example-class   class</span></span>
-<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a><span class="co">#&gt; 23         S4Example-class.Rd               S4Example   class</span></span>
-<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a><span class="co">#&gt; 24        S4Example2-class.Rd        S4Example2-class   class</span></span>
-<span id="cb7-29"><a href="#cb7-29" tabindex="-1"></a><span class="co">#&gt; 25        S4Example2-class.Rd              S4Example2   class</span></span>
-<span id="cb7-30"><a href="#cb7-30" tabindex="-1"></a><span class="co">#&gt; 26   show-S4Example-method.Rd   show,S4Example-method    &lt;NA&gt;</span></span></code></pre></div>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt;                                               file                   alias doctype</span></span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="co">#&gt; Accumulator                         Accumulator.Rd             Accumulator    &lt;NA&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; adder                                     adder.Rd                   adder    &lt;NA&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt; complex_call_stack           complex_call_stack.Rd      complex_call_stack    &lt;NA&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt; deeper_nested_function   deeper_nested_function.Rd  deeper_nested_function    &lt;NA&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt; hypotenuse                           hypotenuse.Rd              hypotenuse    &lt;NA&gt;</span></span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="co">#&gt; increment                             increment.Rd               increment    &lt;NA&gt;</span></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co">#&gt; names,S4Example-method   names-S4Example-method.Rd  names,S4Example-method    &lt;NA&gt;</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="co">#&gt; names,S4Example2-method names-S4Example2-method.Rd names,S4Example2-method    &lt;NA&gt;</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="co">#&gt; nested_function                 nested_function.Rd         nested_function    &lt;NA&gt;</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="co">#&gt; Person                                   Person.Rd                  Person    &lt;NA&gt;</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="co">#&gt; PersonPrime                         PersonPrime.Rd             PersonPrime    data</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="co">#&gt; Rando                                     Rando.Rd                   Rando    &lt;NA&gt;</span></span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="co">#&gt; rd_data_sampler                 rd_data_sampler.Rd         rd_data_sampler    data</span></span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="co">#&gt; rd_sampler                           rd_sampler.Rd              rd_sampler    &lt;NA&gt;</span></span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="co">#&gt; recursive_function           recursive_function.Rd      recursive_function    &lt;NA&gt;</span></span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="co">#&gt; reexport_example               reexport_example.Rd        reexport_example    &lt;NA&gt;</span></span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a><span class="co">#&gt; reexports                             reexports.Rd               reexports  import</span></span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a><span class="co">#&gt; help                                  reexports.Rd                    help  import</span></span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a><span class="co">#&gt; s3_example_func                 s3_example_func.Rd         s3_example_func    &lt;NA&gt;</span></span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a><span class="co">#&gt; s3_example_func.default         s3_example_func.Rd s3_example_func.default    &lt;NA&gt;</span></span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a><span class="co">#&gt; s3_example_func.list            s3_example_func.Rd    s3_example_func.list    &lt;NA&gt;</span></span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a><span class="co">#&gt; S4Example-class                 S4Example-class.Rd         S4Example-class   class</span></span>
+<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a><span class="co">#&gt; S4Example                       S4Example-class.Rd               S4Example   class</span></span>
+<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a><span class="co">#&gt; S4Example2-class               S4Example2-class.Rd        S4Example2-class   class</span></span>
+<span id="cb7-29"><a href="#cb7-29" tabindex="-1"></a><span class="co">#&gt; S4Example2                     S4Example2-class.Rd              S4Example2   class</span></span>
+<span id="cb7-30"><a href="#cb7-30" tabindex="-1"></a><span class="co">#&gt; show,S4Example-method     show-S4Example-method.Rd   show,S4Example-method    &lt;NA&gt;</span></span></code></pre></div>
 <p>These aliases are also used when we use <code>pkg_srcrefs_df()</code>
 and can be used to associate <code>srcrefs</code> with <code>.Rd</code>
 files.</p>

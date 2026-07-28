@@ -48,8 +48,9 @@ overflow: visible;
 }
 </style>
 <style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,7 +61,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -347,7 +348,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co">#&gt; function(a, b) {</span></span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#&gt;   return(sqrt(a^2 + b^2))</span></span>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co">#&gt; }</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt; &lt;bytecode: 0x7ff4894738c8&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt; &lt;bytecode: 0x7fe95d0dd670&gt;</span></span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt; &lt;environment: namespace:examplepkg&gt;</span></span></code></pre></div>
 <p><code>srcref</code>s are a base R data type that is used frequently
 for working with package code. When you install a package using the
@@ -368,7 +369,7 @@ columns of the start and end of the source code.</p>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; }</span></span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># get line and column ranges (for details see ?srcref)</span></span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">as.numeric</span>(<span class="fu">getSrcref</span>(covtracer<span class="sc">::</span>test_trace_df))</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; [1]   17   18   19    1   18    1 1320 1322</span></span></code></pre></div>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; [1]   17   18   19    1   18    1 1387 1389</span></span></code></pre></div>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">getSrcFilename</span>(covtracer<span class="sc">::</span>test_trace_df)</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt; [1] &quot;test_trace_df.R&quot;</span></span></code></pre></div>
 </div>
@@ -465,22 +466,22 @@ of our favorite <code>srcref</code> functions because of the
 <p>And finally, there is a corresponding <code>*_df</code> function to
 make this information easier to see at a glance:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">head</span>(examplepkg_test_srcrefs)</span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="co">#&gt; $44d2da578149a6d55e28bead31483c86</span></span>
 <span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co">#&gt; show(&lt;myS4Example&gt;)</span></span>
 <span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#&gt; $`/private/var/folders/45/szy8wtqj18g3x4mw1khk5jnr0000gn/T/RtmpJ1z7HX/R_LIBS992c78bedb58/examplepkg/examplepkg-tests/testthat/test-complex-calls.R:2:3:2:50:3:50:2:2`</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="co">#&gt; $`/private/var/folders/45/szy8wtqj18g3x4mw1khk5jnr0000gn/T/RtmpcVYkX5/R_LIBS117a2472721e6/examplepkg/examplepkg-tests/testthat/test-complex-calls.R:2:3:2:50:3:50:2:2`</span></span>
 <span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a><span class="co">#&gt; complex_call_stack(&quot;test&quot;)</span></span>
 <span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt; $`/private/var/folders/45/szy8wtqj18g3x4mw1khk5jnr0000gn/T/RtmpJ1z7HX/R_LIBS992c78bedb58/examplepkg/examplepkg-tests/testthat/test-complex-calls.R:6:3:6:54:3:54:6:6`</span></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt; $`/private/var/folders/45/szy8wtqj18g3x4mw1khk5jnr0000gn/T/RtmpcVYkX5/R_LIBS117a2472721e6/examplepkg/examplepkg-tests/testthat/test-complex-calls.R:6:3:6:54:3:54:6:6`</span></span>
 <span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">#&gt; deeper_nested_function(&quot;test&quot;)</span></span>
 <span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt; $`/private/var/folders/45/szy8wtqj18g3x4mw1khk5jnr0000gn/T/RtmpJ1z7HX/R_LIBS992c78bedb58/examplepkg/examplepkg-tests/testthat/test-complex-calls.R:15:7:15:54:7:54:15:15`</span></span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt; $`/private/var/folders/45/szy8wtqj18g3x4mw1khk5jnr0000gn/T/RtmpcVYkX5/R_LIBS117a2472721e6/examplepkg/examplepkg-tests/testthat/test-complex-calls.R:15:7:15:54:7:54:15:15`</span></span>
 <span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="co">#&gt; complex_call_stack(&quot;test&quot;)</span></span>
 <span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="co">#&gt; $`/private/var/folders/45/szy8wtqj18g3x4mw1khk5jnr0000gn/T/RtmpJ1z7HX/R_LIBS992c78bedb58/examplepkg/examplepkg-tests/testthat/test-hypotenuse.R:2:3:2:35:3:35:2:2`</span></span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a><span class="co">#&gt; $`/private/var/folders/45/szy8wtqj18g3x4mw1khk5jnr0000gn/T/RtmpcVYkX5/R_LIBS117a2472721e6/examplepkg/examplepkg-tests/testthat/test-hypotenuse.R:2:3:2:35:3:35:2:2`</span></span>
 <span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a><span class="co">#&gt; hypotenuse(3, 4)</span></span>
 <span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a><span class="co">#&gt; $`/private/var/folders/45/szy8wtqj18g3x4mw1khk5jnr0000gn/T/RtmpJ1z7HX/R_LIBS992c78bedb58/examplepkg/examplepkg-tests/testthat/test-hypotenuse.R:5:5:5:39:5:39:5:5`</span></span>
+<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a><span class="co">#&gt; $`/private/var/folders/45/szy8wtqj18g3x4mw1khk5jnr0000gn/T/RtmpcVYkX5/R_LIBS117a2472721e6/examplepkg/examplepkg-tests/testthat/test-hypotenuse.R:5:5:5:39:5:39:5:5`</span></span>
 <span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a><span class="co">#&gt; hypotenuse(-3, -4)</span></span></code></pre></div>
 </div>
 <div id="extracting-trace-srcrefs" class="section level3">

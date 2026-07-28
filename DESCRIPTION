@@ -1,6 +1,6 @@
 Package: covtracer
 Title: Contextualizing Tests
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
     c(
       person(
@@ -41,10 +41,10 @@ Suggests: testthat, covr (>= 3.5.2), withr, R6, cli, dplyr, igraph,
         knitr, rmarkdown
 License: MIT + file LICENSE
 Encoding: UTF-8
-RoxygenNote: 7.3.1
 VignetteBuilder: knitr
+Config/roxygen2/version: 8.0.0
 NeedsCompilation: no
-Packaged: 2026-01-30 17:22:13 UTC; maksymis
+Packaged: 2026-07-28 10:37:48 UTC; maksymis
 Author: Doug Kelkhoff [aut] (ORCID: <https://orcid.org/0009-0003-7845-4061>),
   Szymon Maksymiuk [aut, cre] (ORCID:
     <https://orcid.org/0000-0002-3120-1601>),
@@ -52,4 +52,4 @@ Author: Doug Kelkhoff [aut] (ORCID: <https://orcid.org/0009-0003-7845-4061>),
   F. Hoffmann-La Roche AG [cph, fnd]
 Maintainer: Szymon Maksymiuk <sz.maksymiuk@gmail.com>
 Repository: CRAN
-Date/Publication: 2026-01-30 18:40:12 UTC
+Date/Publication: 2026-07-28 11:10:02 UTC
